@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Pot.ma
-//Last modified: Fri, Sep 19, 2025 12:32:26 PM
+//Last modified: Fri, Sep 19, 2025 12:34:45 PM
 //Codeset: 1252
 requires maya "2026";
 requires -nodeType "sweepMeshCreator" -dataType "sweepMeshData" -dataType "sweepProfileData"
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "03D0F7D9-4642-81B3-2F6D-B0B1E6E70784";
+fileInfo "UUID" "42CFCB47-498F-E0CA-85A0-7DBC80B63696";
 createNode transform -s -n "persp";
 	rename -uid "84F5EB5C-48F8-331E-A6F1-FC860BE4C32C";
 	setAttr ".v" no;
@@ -1378,9 +1378,8 @@ createNode mesh -n "PotShape" -p "transform4";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "Hanging_Pot";
 	rename -uid "1711326C-4339-8717-A518-69965971864D";
-	setAttr ".t" -type "double3" 0 0 17.593805855038017 ;
-	setAttr ".rp" -type "double3" -0.0099019724675093457 6.1621451377868652 -17.741323947906494 ;
-	setAttr ".sp" -type "double3" -0.0099019724675093457 6.1621451377868652 -17.741323947906494 ;
+	setAttr ".rp" -type "double3" -0.0099019724675093457 6.1621451377868652 -0.14751809286847717 ;
+	setAttr ".sp" -type "double3" -0.0099019724675093457 6.1621451377868652 -0.14751809286847717 ;
 createNode mesh -n "Hanging_PotShape" -p "Hanging_Pot";
 	rename -uid "9743F1BD-43B7-24FC-EB77-D89214B12383";
 	setAttr -k off ".v";
@@ -1552,6 +1551,9 @@ createNode groupParts -n "groupParts5";
 createNode groupId -n "groupId12";
 	rename -uid "9F9A56BA-49BA-4962-80BB-4BBDFC38CBDF";
 	setAttr ".ihi" 0;
+createNode transformGeometry -n "transformGeometry1";
+	rename -uid "8F2DBBFF-4ECC-A98F-5E84-89AF338E2C7D";
+	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 17.593805855038017 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1621,7 +1623,7 @@ connectAttr "groupParts3.og" "PotShape.i";
 connectAttr "groupId7.id" "PotShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "PotShape.iog.og[0].gco";
 connectAttr "groupId8.id" "PotShape.ciog.cog[0].cgid";
-connectAttr "groupParts5.og" "Hanging_PotShape.i";
+connectAttr "transformGeometry1.og" "Hanging_PotShape.i";
 connectAttr "groupId11.id" "Hanging_PotShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Hanging_PotShape.iog.og[0].gco";
 connectAttr "groupId12.id" "Hanging_PotShape.ciog.cog[0].cgid";
@@ -1655,6 +1657,7 @@ connectAttr "sweepMeshCreator2.outMeshArray[0]" "groupParts4.ig";
 connectAttr "groupId9.id" "groupParts4.gi";
 connectAttr "polyUnite2.out" "groupParts5.ig";
 connectAttr "groupId11.id" "groupParts5.gi";
+connectAttr "groupParts5.og" "transformGeometry1.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "revolvedSurfaceShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "revolvedSurfaceShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
