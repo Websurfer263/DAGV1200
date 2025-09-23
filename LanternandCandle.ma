@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
-//Name: Lantern.ma
-//Last modified: Tue, Sep 23, 2025 12:40:52 PM
+//Name: LanternandCandle.ma
+//Last modified: Tue, Sep 23, 2025 12:40:44 PM
 //Codeset: 1252
 requires maya "2026";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,8 +11,9 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "8223C993-41AA-9351-2435-298DF5D2DCE9";
+fileInfo "UUID" "21C08E58-4D6B-E184-5E7E-7484C1DD2F81";
 fileInfo "license" "education";
+fileInfo "exportedFrom" "C:/GitHub/DAGV1200/Lantern.ma";
 createNode transform -s -n "persp";
 	rename -uid "24BF9D1E-44BC-B020-E2A8-7E98FC5723EB";
 	setAttr ".v" no;
@@ -1717,10 +1718,6 @@ connectAttr "lambert2SG.msg" "materialInfo1.sg";
 connectAttr "lambert2.msg" "materialInfo1.m";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
 		;
-connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
-		 -na;
-connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
-connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "polyCube1.out" "polySplit1.ip";
 connectAttr "polySplit1.out" "polySplit2.ip";
 connectAttr "polySplit2.out" "polySplit3.ip";
@@ -1930,4 +1927,4 @@ connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
-// End of Lantern.ma
+// End of LanternandCandle.ma
