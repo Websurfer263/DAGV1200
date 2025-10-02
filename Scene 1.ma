@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
-//Name: Maya ASCII.ma
-//Last modified: Thu, Oct 02, 2025 12:08:41 PM
+//Name: Scene 1.ma
+//Last modified: Thu, Oct 02, 2025 12:08:31 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,8 +11,9 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "5EA4511C-400E-307A-4A31-AC8751A36868";
+fileInfo "UUID" "4C94A560-4E39-EB5B-33EC-E28A5324D82C";
 fileInfo "license" "education";
+fileInfo "exportedFrom" "C:/Users/11094677/Documents/GitHub/DAGV1200/Maya ASCII.ma";
 createNode transform -s -n "persp";
 	rename -uid "54A3B68D-4645-0F5D-076C-919FBD4FDCCB";
 	setAttr ".v" no;
@@ -32752,10 +32753,6 @@ connectAttr "HangingPot:polyTorus1.out" "HangingPot:groupParts2.ig";
 connectAttr "HangingPot:groupId3.id" "HangingPot:groupParts2.gi";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
 		;
-connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
-		 -na;
-connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
-connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "LanternandCandle:lambert2.oc" "LanternandCandle:lambert2SG.ss";
 connectAttr "LanternandCandle:lambert2SG.msg" "LanternandCandle:materialInfo1.sg"
 		;
@@ -33228,4 +33225,4 @@ connectAttr "groupId74.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId75.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId76.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId77.msg" ":initialShadingGroup.gn" -na;
-// End of Maya ASCII.ma
+// End of Scene 1.ma
